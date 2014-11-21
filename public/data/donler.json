@@ -1,0 +1,16 @@
+{
+  "name": "Donler v1 API",
+  "version": "1.0",
+  "title": "Donler API",
+  "description": "Donler API",
+  "protocol": "rest",
+  "basePath": "http://localhost:3000",
+  "auth": {
+    "key": {
+      "param": "key"
+    }
+  },
+  "resources": {
+    
+  }
+}

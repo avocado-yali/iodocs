@@ -1,4 +1,7 @@
 {
+    "donler": {
+        "name": "Donler v1 API"
+    },
     "klout": {
         "name": "Klout v2 API"
     },
