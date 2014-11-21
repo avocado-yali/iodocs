@@ -1,16 +1,150 @@
 {
-  "name": "Donler v1 API",
-  "version": "1.0",
-  "title": "Donler API",
-  "description": "Donler API",
-  "protocol": "rest",
-  "basePath": "http://localhost:3000",
-  "auth": {
-    "key": {
-      "param": "key"
+    "name": "Donler v1 API",
+    "version": "1.0",
+    "title": "Donler API",
+    "description": "Donler API",
+    "protocol": "rest",
+    "basePath": "http://127.0.0.1:3002",
+    "auth": {
+        "key": {
+            "param": "key"
+        }
+    },
+    "headers": {
+        "Content-Type": "application/json"
+    },
+    "resources": {
+        "CompanyMethods": {
+            "methods": {
+                "RegisterCompany": {
+                    "name": "RegisterCompany",
+                    "description": "注册公司",
+                    "httpMethod": "POST",
+                    "path": "/companies",
+                    "parameters": {
+                        "name": {
+                            "description": "公司全称，与营业执照注册名保持一致",
+                            "required": true,
+                            "title": "公司全称",
+                            "type": "string"
+                        },
+                        "province": {
+                            "description": "省份",
+                            "required": true,
+                            "title": "省份",
+                            "type": "string"
+                        },
+                        "city": {
+                            "description": "城市",
+                            "required": true,
+                            "title": "城市",
+                            "type": "string"
+                        },
+                        "district": {
+                            "description": "区",
+                            "required": true,
+                            "title": "区",
+                            "type": "string"
+                        },
+                        "address": {
+                            "description": "详细地址",
+                            "required": true,
+                            "title": "详细地址",
+                            "type": "string"
+                        },
+                        "contacts": {
+                            "description": "联系人",
+                            "required": true,
+                            "title": "联系人",
+                            "type": "string"
+                        },
+                        "lindline": {
+                            "description": "公司电话",
+                            "title": "公司电话",
+                            "type": "object",
+                            "properties": {
+                                "areacode": {
+                                    "type": "string",
+                                    "description": "区号",
+                                    "required": true
+                                },
+                                "number": {
+                                    "type": "string",
+                                    "description": "电话号码",
+                                    "required": true
+                                },
+                                "extension": {
+                                    "type": "string",
+                                    "description": "分机"
+                                }
+                            }
+                        },
+                        "email": {
+                            "description": "公司邮箱",
+                            "required": true,
+                            "title": "公司邮箱",
+                            "type": "string"
+                        },
+                        "phone": {
+                            "description": "手机号码，注册者的手机号",
+                            "required": true,
+                            "title": "手机号码",
+                            "type": "string"
+                        },
+                        "invite_code": {
+                            "description": "邀请码，需要邀请码注册时必须填写，否则可以省略",
+                            "required": false,
+                            "title": "邀请码",
+                            "type": "string"
+                        }
+                    }
+                },
+                "GetCompanyData": {
+                    "name": "GetCompanyData",
+                    "description": "获取公司数据",
+                    "httpMethod": "GET",
+                    "path": "/companies/{id}",
+                    "parameters": {
+                        "id": {
+                            "description": "公司id",
+                            "location": "path",
+                            "required": true,
+                            "title": "id",
+                            "type": "string"
+                        }
+                    }
+                },
+                "EditCompany": {
+                    "name": "EditCompany",
+                    "description": "编辑公司信息",
+                    "httpMethod": "PUT",
+                    "path": "/companies/{id}",
+                    "parameters": {
+                        "id": {
+                            "description": "公司id",
+                            "location": "path",
+                            "required": true,
+                            "title": "id",
+                            "type": "string"
+                        }
+                    }
+                },
+                "DeleteCompany": {
+                    "name": "DeleteCompany",
+                    "description": "屏蔽公司",
+                    "httpMethod": "DELETE",
+                    "path": "/companies/{id}",
+                    "parameters": {
+                        "id": {
+                            "description": "公司id",
+                            "location": "path",
+                            "required": true,
+                            "title": "id",
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
     }
-  },
-  "resources": {
-    
-  }
 }
