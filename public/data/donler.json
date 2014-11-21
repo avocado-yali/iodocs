@@ -143,6 +143,151 @@
                             "type": "string"
                         }
                     }
+                },
+                "Validate": {
+                    "name": "Validate",
+                    "description": "验证邮箱、邀请码、官方名或用户名是否有效或已被占用",
+                    "httpMethod": "POST",
+                    "path": "/companies/validate",
+                    "parameters": {
+                        "email": {
+                            "description": "公司邮箱",
+                            "required": false,
+                            "title": "公司邮箱",
+                            "type": "string"
+                        },
+                        "invite_code": {
+                            "description": "邀请码",
+                            "required": false,
+                            "title": "邀请码",
+                            "type": "string"
+                        },
+                        "name": {
+                            "description": "公司全称",
+                            "required": false,
+                            "title": "公司全称",
+                            "type": "string"
+                        },
+                        "username": {
+                            "description": "用户名，用于公司账号登录",
+                            "required": false,
+                            "title": "用户名",
+                            "type": "string"
+                        }
+                    }
+                },
+                "GetTeams": {
+                    "name": "GetTeams",
+                    "description": "获取公司小队数据",
+                    "httpMethod": "GET",
+                    "path": "/companies/{id}/teams",
+                    "parameters": {
+                        "id": {
+                            "description": "公司id",
+                            "location": "path",
+                            "required": true,
+                            "title": "id",
+                            "type": "string"
+                        }
+                    }
+                },
+                "GetMembers": {
+                    "name": "GetMembers",
+                    "description": "获取公司成员数据",
+                    "httpMethod": "GET",
+                    "path": "/companies/{id}/members",
+                    "parameters": {
+                        "id": {
+                            "description": "公司id",
+                            "location": "path",
+                            "required": true,
+                            "title": "id",
+                            "type": "string"
+                        }
+                    }
+                },
+                "GetDepartments": {
+                    "name": "GetMembers",
+                    "description": "获取公司成员数据",
+                    "httpMethod": "GET",
+                    "path": "/companies/{id}/departments",
+                    "parameters": {
+                        "id": {
+                            "description": "公司id",
+                            "location": "path",
+                            "required": true,
+                            "title": "id",
+                            "type": "string"
+                        }
+                    }
+                },
+                "GetCompanyTags": {
+                    "name": "GetCompanyTags",
+                    "description": "获取公司标签",
+                    "httpMethod": "GET",
+                    "path": "/companies/{id}/tags",
+                    "parameters": {
+                        "id": {
+                            "description": "公司id",
+                            "location": "path",
+                            "required": true,
+                            "title": "id",
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "UserMethods": {
+            "methods": {
+                "RegisterUser": {
+                    "name": "RegisterUser",
+                    "description": "用户注册",
+                    "httpMethod": "POST",
+                    "path": "/users",
+                    "parameters": {
+                        "email": {
+                            "description": "企业邮箱，用于注册和登录",
+                            "required": true,
+                            "title": "企业邮箱",
+                            "type": "string"
+                        },
+                        "nickname": {
+                            "description": "昵称",
+                            "required": true,
+                            "title": "昵称",
+                            "type": "string"
+                        },
+                        "password": {
+                            "description": "密码",
+                            "required": true,
+                            "title": "密码",
+                            "type": "string"
+                        },
+                        "realname": {
+                            "description": "真实姓名",
+                            "required": true,
+                            "title": "真实姓名",
+                            "type": "string"
+                        },
+                        "phone": {
+                            "description": "手机号码",
+                            "required": true,
+                            "title": "手机号码",
+                            "type": "string"
+                        },
+                        "departments": {
+                            "description": "所在部门",
+                            "title": "部门",
+                            "type": "array",
+                            "items": {
+                                "title": "部门",
+                                "description": "部门",
+                                "type": "string",
+                                "required": true
+                            }
+                        }
+                    }
                 }
             }
         }
